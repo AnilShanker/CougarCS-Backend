@@ -13,6 +13,7 @@ import events from '../api/routes/event';
 import tutors from '../api/routes/tutors';
 import youtube from '../api/routes/youtube';
 import payment from '../api/routes/payment';
+import rsvp from '../api/routes/rsvp';
 import { logger } from '../utils/logger';
 import { httpLogger } from '../utils/httpLogger';
 import { ENABLE_CORS, PROD, SENTRY_URL, TEST } from '../utils/config';
@@ -70,6 +71,7 @@ app.use('/api/send', email);
 app.use('/api/events', events);
 app.use('/api/tutors', tutors);
 app.use('/api/youtube', youtube);
+app.use('/api/rsvp', rsvp);
 
 app.use((req, res) => {
 	throw new Error(`Invaild Request - Endpoint: ${req.originalUrl}`);
